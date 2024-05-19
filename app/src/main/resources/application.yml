@@ -1,0 +1,17 @@
+---
+spring.config.activate.on-profile: production
+uri:
+    authApi: "http://production-auth-api.core.svc.cluster.local"
+
+---
+spring.config.activate.on-profile: sandbox
+uri:
+    authApi: "http://production-auth-api.core.svc.cluster.local"
+
+---
+spring.config.activate.on-profile: local
+
+uri:
+    authApi: "http://localhost:8080"
+server:
+    port: 8000
