@@ -1,0 +1,10 @@
+spring:
+    cloud:
+        gateway:
+            routes:
+                -   id: auth
+                    uri: http://production-auth-api.core.svc.cluster.local
+                    predicates:
+                        - Path=/auth/**
+                    filters:
+                        - RewritePath=/auth/?(?<segment>.*), /$\{segment}
